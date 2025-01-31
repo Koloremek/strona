@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biomy w Don't Starve Together</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <nav class="menu">
+        <div class="dropdown">
+           <a href="#"> Menu</a>
+           <ul>
+              <li><a href="postacie.html">Postacie</a></li>
+              <li><a href="strona.html">Bossy</a></li>
+              <li><a href="Start.html">Strona główna</a></li>
+           </ul>
+        </div>
+     </nav>
+<header style="text-align: center;">
+    <h1>Biomy w Don't Starve Together</h1>
+    <p>W grze Don't Starve Together znajdziesz różnorodne biomy, z których każdy oferuje inne zasoby, wyzwania oraz niebezpieczeństwa. Poznaj charakterystykę każdego z nich!</p>
+</header>
+
+<div style="text-align: center;">
+    <button class="nav-arrow nav-left" onclick="prevImage()">&#10094;</button>
+    <img id="gallery-image" class="gallery-image" src="https://static.wikia.nocookie.net/dont-starve-game/images/9/95/Grassland_Icon.png/revision/latest?cb=20231222231959" alt="Galeria zdjęć">
+    <button class="nav-arrow nav-right" onclick="nextImage()">&#10095;</button>
+</div>
+
+<script>
+
+    const images = [
+        "https://static.wikia.nocookie.net/dont-starve-game/images/9/95/Grassland_Icon.png/revision/latest?cb=20231222231959",
+        "https://static.wikia.nocookie.net/dont-starve-game/images/1/1b/Forest_Icon.png/revision/latest?cb=20231222230034",
+        "https://static.wikia.nocookie.net/dont-starve-game/images/4/48/Graveyard_map.png/revision/latest?cb=20231222233824",
+        "https://static.wikia.nocookie.net/dont-starve-game/images/d/db/Marsh_Icon.png/revision/latest?cb=20231222232203",
+        "https://static.wikia.nocookie.net/dont-starve-game/images/3/35/Mosaic_Icon.png/revision/latest?cb=20231222233037",
+        "https://static.wikia.nocookie.net/dont-starve-game/images/e/ec/Rockland_Icon.png/revision/latest?cb=20231223225728",
+        "https://static.wikia.nocookie.net/dont-starve-game/images/8/8a/Savanna_Icon.png/revision/latest?cb=20231222233546",
+        "https://static.wikia.nocookie.net/dont-starve-game/images/d/d1/Desert_Icon.png/revision/latest?cb=20231222234825",
+        "https://static.wikia.nocookie.net/dont-starve-game/images/6/69/Deciduous_Icon.png/revision/latest?cb=20231222235231"
+    ];
+
+    let currentImageIndex = 0;
+
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        document.getElementById('gallery-image').src = images[currentImageIndex];
+    }
+
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        document.getElementById('gallery-image').src = images[currentImageIndex];
+    }
+</script>
+</body>
+</html>
